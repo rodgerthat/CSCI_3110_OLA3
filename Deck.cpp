@@ -77,7 +77,9 @@ bool Deck::isEmpty() {
 // overload the << operator
 ostream& operator << (ostream& os, const Deck& dk) {
 
-	for (int i=0; i < dk.Card_Num; i++) {
+	// lost a point for this the iterator should only output the existing deck. 
+	// which will be the total number of cards, minus the location of the topcard. 
+	for (int i=0; i < (dk.Card_Num - dk.topCard); i++) {
 	
 		os << dk.theDeck[i] <<  '\t';
 	}
